@@ -1,8 +1,8 @@
 name: Update personal-readme.md
 on: issues
 jobs:
-  example:
-    name: comment
+  update:
+    name: Update profile readme
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
