@@ -24,8 +24,8 @@ jobs:
         git push origin new
         uses: ad-m/github-push-action@master
         with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: sample
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: sample
     #- name: Push changes
     #  uses: ad-m/github-push-action@master
     #  with:
@@ -41,5 +41,5 @@ jobs:
         git push origin sample
         uses: ad-m/github-push-action@master
         with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: sample
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: sample
