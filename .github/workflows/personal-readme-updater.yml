@@ -1,8 +1,9 @@
 name: Update personal-readme.md
 on:
-  push:
-    paths:
-      - 'personal-readme.md'
+  issues
+  #push:
+  #  paths:
+  #    - 'personal-readme.md'
 jobs:
   update:
     name: Update profile readme
