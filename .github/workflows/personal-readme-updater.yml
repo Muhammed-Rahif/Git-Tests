@@ -21,7 +21,6 @@ jobs:
         curl https://raw.githubusercontent.com/Muhammed-Rahif/Muhammed-Rahif/code-mode/README.md -o "personal-readme.md"
         git add --all
         git commit -m "Update \`personal-readme.md\`" -a
-        git push origin new
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -38,7 +37,6 @@ jobs:
         curl https://raw.githubusercontent.com/Muhammed-Rahif/Muhammed-Rahif/code-mode/README.md -o "personal-readme.md"
         git add --all
         git commit -m "Update \`personal-readme.md\`" -a
-        git push origin sample
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
