@@ -14,7 +14,6 @@ jobs:
         fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
     - name: Create local changes
       run: |
-        git branch -v
         curl https://raw.githubusercontent.com/Muhammed-Rahif/Muhammed-Rahif/code-mode/README.md -o "personal-readme.md"
     - name: Commit files
       run: |
