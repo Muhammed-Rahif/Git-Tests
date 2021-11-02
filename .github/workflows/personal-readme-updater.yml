@@ -6,9 +6,11 @@ on:
   #    - 'personal-readme.md'
 jobs:
   update:
-    name: Update profile readme
+    name: Update profile readme on branches
     runs-on: ubuntu-latest
     steps:
+    
+    # Update branch 'new'
     - name: Checkout branch new
       uses: actions/checkout@v2
       with:
@@ -22,7 +24,28 @@ jobs:
         curl https://raw.githubusercontent.com/Muhammed-Rahif/Muhammed-Rahif/code-mode/README.md -o "personal-readme.md"
         git add --all
         git commit -m "Update \`personal-readme.md\`" -a
-    - uses: ad-m/github-push-action@master
+    - name: Push branch new
+      uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: new
+        
+    # Update branch 'sample'
+    - name: Checkout branch sample
+      uses: actions/checkout@v2
+      with:
+        ref: sample
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+        fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+    - name: Update, Commit and Push files on branch sample
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        curl https://raw.githubusercontent.com/Muhammed-Rahif/Muhammed-Rahif/code-mode/README.md -o "personal-readme.md"
+        git add --all
+        git commit -m "Update \`personal-readme.md\`" -a
+    - name: Push branch sample
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: sample
