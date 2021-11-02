@@ -22,10 +22,14 @@ jobs:
         git add --all
         git commit -m "Update \`personal-readme.md\`" -a
         git push origin new
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
+        uses: ad-m/github-push-action@master
+        with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: sample
+    #- name: Push changes
+    #  uses: ad-m/github-push-action@master
+    #  with:
+    #    github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Update, Commit and Push files on branch sample
       run: |
         git checkout sample
@@ -35,7 +39,7 @@ jobs:
         git add --all
         git commit -m "Update \`personal-readme.md\`" -a
         git push origin sample
-    #- name: Push changes
-    #  uses: ad-m/github-push-action@master
-    #  with:
-    #   github_token: ${{ secrets.GITHUB_TOKEN }}
+        uses: ad-m/github-push-action@master
+        with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: sample
