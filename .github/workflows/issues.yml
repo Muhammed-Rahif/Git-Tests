@@ -1,8 +1,8 @@
 on:
   issues:
     types: [opened, edited]
- 
- jobs:
+
+jobs:
   dump:
     runs-on: ubuntu-latest
     steps:
