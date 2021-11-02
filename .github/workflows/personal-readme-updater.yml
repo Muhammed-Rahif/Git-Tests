@@ -25,7 +25,6 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: new
     - name: Checkout branch sample
       uses: actions/checkout@v2
       with:
@@ -34,7 +33,6 @@ jobs:
         fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
     - name: Update, Commit and Push files on branch sample
       run: |
-        git checkout sample
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         curl https://raw.githubusercontent.com/Muhammed-Rahif/Muhammed-Rahif/code-mode/README.md -o "personal-readme.md"
@@ -43,4 +41,3 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: sample
