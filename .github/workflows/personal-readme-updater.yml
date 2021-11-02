@@ -12,7 +12,7 @@ jobs:
       with:
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
         fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
-    - name: Update and Commit files on branch new
+    - name: Update, Commit and Push files on branch new
       run: |
         git checkout new
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -20,11 +20,12 @@ jobs:
         curl https://raw.githubusercontent.com/Muhammed-Rahif/Muhammed-Rahif/code-mode/README.md -o "personal-readme.md"
         git add --all
         git commit -m "Update \`personal-readme.md\`" -a
+        git push origin new
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Update and Commit files on branch sample
+    - name: Update, Commit and Push files on branch sample
       run: |
         git checkout sample
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -32,7 +33,8 @@ jobs:
         curl https://raw.githubusercontent.com/Muhammed-Rahif/Muhammed-Rahif/code-mode/README.md -o "personal-readme.md"
         git add --all
         git commit -m "Update \`personal-readme.md\`" -a
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        git push origin sample
+    #- name: Push changes
+    #  uses: ad-m/github-push-action@master
+    #  with:
+    #   github_token: ${{ secrets.GITHUB_TOKEN }}
