@@ -5,12 +5,11 @@ on:
   #  paths:
   #    - 'personal-readme.md'
 jobs:
-  update:
-    name: Update profile readme on branches
+
+  update-branch-new:
+    name: Update profile readme on 'new'
     runs-on: ubuntu-latest
     steps:
-    
-    # Update branch 'new'
     - name: Checkout branch new
       uses: actions/checkout@v2
       with:
@@ -30,7 +29,10 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: new
         
-    # Update branch 'sample'
+  update-branch-sample:
+    name: Update profile readme on 'sample'
+    runs-on: ubuntu-latest
+    steps:
     - name: Checkout branch sample
       uses: actions/checkout@v2
       with:
