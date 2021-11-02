@@ -130,8 +130,6 @@ function whoAmI() {
 
 ```
 
-<hr />
-
 ```js
 function getInTouch() {
   console.log("Tip : Click the badge to get in touch with me in that media...!");
