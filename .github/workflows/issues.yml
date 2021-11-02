@@ -1,0 +1,10 @@
+on:
+  issues:
+    types: [opened, edited]
+ 
+ jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+    - name: $github
+      run:   echo "$GITHUB_CONTEXT"
