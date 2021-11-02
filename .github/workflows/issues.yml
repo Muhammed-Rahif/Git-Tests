@@ -8,3 +8,5 @@ jobs:
     steps:
     - name: $github
       run:   echo "$GITHUB_CONTEXT"
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
