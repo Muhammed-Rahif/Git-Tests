@@ -1,0 +1,18 @@
+name: Format code
+on:
+    workflow_dispatch:
+
+jobs:
+    some:
+        name: Some
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout to branch
+              uses: actions/checkout@v2
+            - name: Format code
+              id: check
+              run: yarn check-format && ${{step.check}}
+              continue-on-error: true
+            - name: Echo
+              if: steps.check.outcome == 'success'
+              run: echo SUCCESS; exit 0;
