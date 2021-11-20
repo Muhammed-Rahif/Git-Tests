@@ -14,5 +14,5 @@ jobs:
               run: exit 1
               continue-on-error: true
             - name: Echo
-              if: steps.check.outcome == 'success'
+              if: steps.check.outcome != 'success'
               run: echo SUCCESS; exit 0;
